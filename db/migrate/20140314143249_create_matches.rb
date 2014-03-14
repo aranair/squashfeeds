@@ -3,7 +3,7 @@ class CreateMatches < ActiveRecord::Migration
     create_table :matches do |t|
       t.string :grade
       t.date :date
-      t.string :opopponent
+      t.string :opponent
       t.string :winner
       t.string :score
       t.text :description

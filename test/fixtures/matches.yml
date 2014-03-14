@@ -3,7 +3,7 @@
 one:
   grade: MyString
   date: 2014-03-14
-  opopponent: MyString
+  opponent: MyString
   winner: MyString
   score: MyString
   description: MyText
@@ -11,7 +11,7 @@ one:
 two:
   grade: MyString
   date: 2014-03-14
-  opopponent: MyString
+  opponent: MyString
   winner: MyString
   score: MyString
   description: MyText
