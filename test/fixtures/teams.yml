@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  points_a: 1.5
+  points_b: 1.5
+  points_c: 1.5
+  points_d: 1.5
+  points_e: 1.5
+  points_f: 1.5
+
+two:
+  name: MyString
+  points_a: 1.5
+  points_b: 1.5
+  points_c: 1.5
+  points_d: 1.5
+  points_e: 1.5
+  points_f: 1.5
