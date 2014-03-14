@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grade: MyString
+  date: 2014-03-14
+  opopponent: MyString
+  winner: MyString
+  score: MyString
+  description: MyText
+
+two:
+  grade: MyString
+  date: 2014-03-14
+  opopponent: MyString
+  winner: MyString
+  score: MyString
+  description: MyText
