@@ -1,4 +1,4 @@
-<h1>Points</h1>
+<h1>Grades</h1>
 </br>
 <%= render 'grade_links' %>
 </br></br>
@@ -16,7 +16,7 @@
     <% @teams.each_with_index do |team, rank| %>
       <tr>
         <td><%= rank+1 %></td>
-        <td><%= team.name %></td>
+        <td><%= link_to team.name, team_path(team)%></td>
         <%- %w(a b c d e f).each do |grade| %>
           <%= render_team_points(team, grade) %>
         <%- end %>

@@ -3,7 +3,7 @@ class TeamsController < ApplicationController
   before_action :authenticate_admin!, only: [:edit_list, :update_list, :update, :destroy]
 
   before_action :set_grade, only: [:update_list, :edit_list, :index]
-  before_action :set_teams_by_grade, only: [:update_list, :edit_list, :index]
+  before_action :set_teams_by_grade, only: [:index]
 
   def update_list
     @teams = Team.update(params[:teams].keys, params[:teams].values).reject { |p| p.errors.empty? }
@@ -16,20 +16,20 @@ class TeamsController < ApplicationController
   end
 
   def edit_list
+    @teams = Team.for_grade(@grade, true)
   end
 
   def index
   end
 
-  # def show
-  # end
+  def show
+  end
 
-  # def new
-  #   @team = Team.new
-  # end
+  def new
+    @team = Team.new(@grade)
+  end
 
   def edit
-    @teams = Team.for_grade(params[:grade])
   end
 
   def create
@@ -37,7 +37,7 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to @team, notice: 'Team was successfully created.' }
+        format.html { redirect_to teams_path, notice: 'Team was successfully created.' }
         format.json { render action: 'show', status: :created, location: @team }
       else
         format.html { render action: 'new' }
@@ -63,7 +63,7 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teames_url }
+      format.html { redirect_to teams_url }
       format.json { head :no_content }
     end
   end

@@ -8,38 +8,23 @@
   </div>
 </div>
 </br>
-<div class="row">
-  <div class="col-xs-12">
-    <%= link_to 'Back', teams_path(params) %>
+<%= form_tag update_teams_list_path, method: :post, class: 'form-horizontal' do %>  
+  <div class="form-group">
+    <div class="col-xs-4"><label>Team</label></div>
+    <div class="col-xs-8"><label>Points: <%= @grade.upcase %></label></div>
   </div>
-</div>
-</br>
-<div class="row">
-  <div class="col-xs-12">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Team</th>
-          <th>Points: <%= @grade.upcase %> Grade</th>
-        </tr>
-      </thead>
-      <tbody>
-      <%= form_tag update_teams_list_path, :method => :post do %>  
-        <% for team in @teams %>  
-          <tr>
-          <%= fields_for "teams[]", team do |f| %>  
-            <td><%= f.label team.name %></td>
-            <%- %w(a b c d e f).each do |grade| %>
-              <td class="<%= 'hidden' if grade != @grade %>">
-                <%= f.text_field eval(":points_#{grade}") %>
-              </td>
-            <% end %>
-          <% end %>  
-          </tr>
-        <% end %>  
-        <tr><td> <%= submit_tag "Submit", class: 'btn btn-primary' %></td><td></td></tr>
+  <% for team in @teams %>  
+    <div class="form-group">
+      <%= fields_for "teams[]", team do |f| %>  
+        <div class="col-xs-4"><%= f.label team.name %></div>
+        <%- %w(a b c d e f).each do |grade| %>
+          <div class="col-xs-8 <%= 'hidden' if grade != @grade %>">
+            <%= f.text_field eval(":points_#{grade}") %>
+          </div>
+        <% end %>
       <% end %>  
-      </tbody>
-    </table>
-  </div>
-</div>
+    </div>
+  <% end %>  
+  <%= submit_tag "Submit", class: 'btn btn-primary' %>
+  <%= link_to 'Back', teams_path(params), class: 'btn btn-default' %> 
+<% end %>  

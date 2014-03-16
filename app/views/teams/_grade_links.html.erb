@@ -8,12 +8,11 @@
 <div class="row">
   </br>
   <div class="col-xs-12">
-    <%- if @grade.present? %>
-      <%= link_to 'Edit', edit_teams_list_path(@grade) %> |
-    <%- end %>
     <%- if current_admin.blank? %>
       <%= link_to 'Login', new_admin_session_path %>
     <%- else %>
+      <%= link_to 'Add Team', new_team_path %> |
+      <%= link_to 'Edit', edit_teams_list_path(@grade) if @grade.present?%> |
       <%= link_to 'Logout', destroy_admin_session_path, method: 'DELETE' %>
     <%- end %>
   </div>
