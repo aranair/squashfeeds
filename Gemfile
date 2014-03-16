@@ -22,6 +22,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'rails_12factor', group: :production
+
 group :assets do
   gem 'therubyracer'
   gem 'uglifier'
