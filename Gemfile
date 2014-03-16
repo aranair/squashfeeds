@@ -4,9 +4,6 @@ source 'http://rubygems.org'
 gem 'rails', '4.0.3'
 
 gem 'pg'
-# gem 'handlebars-source', '1.0.0.rc4'
-# gem 'ember-source'
-# gem 'emblem-rails'
 gem "devise", "~> 3.1.0"
 gem 'jquery-rails', '~> 2.1'
 gem 'sass-rails', '>= 3.2' # sass-rails needs to be higher than 3.2
@@ -17,12 +14,16 @@ gem 'redcarpet'
 gem "pikaday-gem", "~> 1.1.0.0"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 1.0.1'
 gem 'jbuilder'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :assets do
+  gem 'therubyracer'
+  gem 'uglifier'
 end
 
 # Use ActiveModel has_secure_password
