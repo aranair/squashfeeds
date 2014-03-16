@@ -1,0 +1,45 @@
+<h1>Edit</h1>
+</br>
+<div class="row">
+  <div class="col-xs-12">
+    <%- %w(a b c d e f).each do |grade| %>
+      <%= render_grade_link(grade, 'edit') %>
+    <%- end %>
+  </div>
+</div>
+</br>
+<div class="row">
+  <div class="col-xs-12">
+    <%= link_to 'Back', teams_path(params) %>
+  </div>
+</div>
+</br>
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Points: <%= @grade.upcase %> Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+      <%= form_tag update_teams_list_path, :method => :post do %>  
+        <% for team in @teams %>  
+          <tr>
+          <%= fields_for "teams[]", team do |f| %>  
+            <td><%= f.label team.name %></td>
+            <%- %w(a b c d e f).each do |grade| %>
+              <td class="<%= 'hidden' if grade != @grade %>">
+                <%= f.text_field eval(":points_#{grade}") %>
+              </td>
+            <% end %>
+          <% end %>  
+          </tr>
+        <% end %>  
+        <tr><td> <%= submit_tag "Submit", class: 'btn btn-primary' %></td><td></td></tr>
+      <% end %>  
+      </tbody>
+    </table>
+  </div>
+</div>

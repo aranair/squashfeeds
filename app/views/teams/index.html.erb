@@ -1,0 +1,26 @@
+<h1>Points</h1>
+</br>
+<%= render 'grade_links' %>
+</br></br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+        <%- %w(a b c d e f).each do |grade| %>
+          <%= render_team_header(grade) %>
+        <%- end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teams.each_with_index do |team, rank| %>
+      <tr>
+        <td><%= rank+1 %></td>
+        <td><%= team.name %></td>
+        <%- %w(a b c d e f).each do |grade| %>
+          <%= render_team_points(team, grade) %>
+        <%- end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
