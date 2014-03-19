@@ -4,7 +4,8 @@ class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.json
   def index
-    @matches = Match.all
+    @grade = (params[:grade].presence && params[:grade].downcase)
+    @matches = @grade.present? ? Match.where(grade: @grade) : Match.all
   end
 
   # GET /matches/1
@@ -69,6 +70,6 @@ class MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:grade, :date, :opponent, :winner, :score, :description)
+      params.require(:match).permit(:grade, :date, :opponent, :winner, :score, :description, :result)
     end
 end

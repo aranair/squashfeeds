@@ -1,4 +1,4 @@
-<%= form_for(@match) do |f| %>
+<%= form_for @match, html: { class: 'form-horizontal' } do |f| %>
   <% if @match.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@match.errors.count, "error") %> prohibited this match from being saved:</h2>
@@ -10,32 +10,31 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :grade %><br>
-    <%= f.text_field :grade %>
+  <div class="form-group">
+    <div class="col-xs-4"><%= f.label :grade %></div>
+    <div class="col-xs-8"><%= f.select(:grade, %w(a b c d e f).map { |g| [g.upcase, g] } ) %> </div>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
+  <div class="form-group">
+    <div class="col-xs-4"><%= f.label :date %></div>
+    <div class="col-xs-8"><%= f.date_field :date, value: Date.today.to_s(:db) %></div>
   </div>
-  <div class="field">
-    <%= f.label :opponent %><br>
-    <%= f.text_field :opponent %>
+  <div class="form-group">
+    <div class="col-xs-4"><%= f.label :opponent %></div>
+    <div class="col-xs-8"><%= f.text_field :opponent %></div>
   </div>
-  <div class="field">
-    <%= f.label :winner %><br>
-    <%= f.text_field :winner %>
+  <div class="form-group">
+    <div class="col-xs-4"><%= label_tag 'Score (ours)' %></div>
+    <div class="col-xs-8"><%= f.select(:score, %w(0 1 2 3 4).map { |g| [g, g] } ) %> </div>
   </div>
-  <div class="field">
-    <%= f.label :score %><br>
-    <%= f.text_field :score %>
+  <div class="form-group">
+    <div class="col-xs-4"><%= f.label :result %></div>
+    <div class="col-xs-8"><%= f.select(:result, %w(Unplayed Victory Loss Draw).map { |g| [g, g] } ) %> </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <div class="col-xs-4"><%= f.label :description %></div>
+    <div class="col-xs-8"><%= f.text_area :description %></div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save', class: 'btn btn-primary'%> <%= link_to 'Back', matches_path, class: 'btn btn-default' %>
   </div>
 <% end %>

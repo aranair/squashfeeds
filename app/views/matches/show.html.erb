@@ -1,34 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="match-show">
+  <div class="row">
+    <div class="col-xs-12">
+      <p id="notice"><%= notice %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Grade:</strong>
-  <%= @match.grade %>
-</p>
+  <div class="row user-actions">
+    <div class="col-xs-12">
+    <% if current_admin %>
+      <%= link_to 'Edit', edit_match_path(@match) %> &nbsp; 
+      <%= link_to 'Destroy', @match, method: :delete, data: { confirm: 'Are you sure?' } %> &nbsp;
+    <% end %>
+    <%= link_to 'Back', matches_path %>
+    </div>
+  </div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @match.date %>
-</p>
-
-<p>
-  <strong>Opopponent:</strong>
-  <%= @match.opponent %>
-</p>
-
-<p>
-  <strong>Winner:</strong>
-  <%= @match.winner %>
-</p>
-
-<p>
-  <strong>Score:</strong>
-  <%= @match.score %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @match.description %>
-</p>
-
-<%= link_to 'Edit', edit_match_path(@match) %> |
-<%= link_to 'Back', matches_path %>
+  <div class="row">
+    <div class="col-xs-12">
+      <p class='match-title'><%= render_match_title(@match) %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p class='match-time'><%= format_index_date(@match) %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <p> <%= @match.description %> </p>
+    </div>
+  </div>
+</div>

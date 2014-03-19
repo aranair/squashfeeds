@@ -1,3 +1,57 @@
 // Place all the styles related to the matches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.match-show {
+  .match-title {
+    padding-top: 10px;
+    font-size:22px;
+    line-height:27px;
+    color:#333;
+  }
+  .match-time { font-size: 16px; color: #777; }
+  .user-actions { 
+    a { color: #777; }
+  }
+}
+.matches-list {
+  display:block;
+  padding-left: 0px;
+  border-top: 1px solid #e7e7e7;
+  margin-top: 10px;
+}
+li.match-list-item {
+  position: relative;
+  display:block;
+  z-index:0;
+  border-bottom:1px solid #e7e7e7;
+
+  .match-title {
+    padding-top: 10px;
+    font-size:18px;
+    line-height:22px;
+    font-weight:300;
+    color:#333;
+  }
+  a.match-list-edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 100px;
+    text-align: center;
+    height:100%;
+    line-height: 100px;
+    // &:hover { background: rgba(41, 185, 250, 0.1); }
+    &:hover { border-left: 1px solid #e7e7e7; background:rgba(255, 255, 255, 0.80); }
+  }
+  a.match-link {
+    display: block;
+  }   
+  a.match-link:hover {
+    background:rgba(255, 255, 255, 0.80);
+    text-decoration: none;
+    .match-title { text-decoration: underline; }
+  }
+  a.match-link:hover >.match-time { text-decoration: none; }
+}

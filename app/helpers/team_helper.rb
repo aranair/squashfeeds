@@ -6,7 +6,7 @@ module TeamHelper
                 else
                   edit_teams_list_path(params.merge(grade: grade))
                 end
-    link_to path_args do 
+    link_to params.merge(grade: grade) do 
       button_tag(
         type: 'button', 
         class: "btn #{@grade == grade ? 'btn-primary' : 'btn-default'}") do

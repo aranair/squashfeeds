@@ -5,7 +5,9 @@ class CreateMatches < ActiveRecord::Migration
       t.date :date
       t.string :opponent
       t.string :winner
-      t.string :score
+      t.integer :score
+      t.integer :opponent_score
+      t.string :result
       t.text :description
 
       t.timestamps

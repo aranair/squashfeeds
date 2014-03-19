@@ -1,37 +1,31 @@
-<h1>Listing matches</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Grade</th>
-      <th>Date</th>
-      <th>Opopponent</th>
-      <th>Winner</th>
-      <th>Score</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @matches.each do |match| %>
-      <tr>
-        <td><%= match.grade %></td>
-        <td><%= match.date %></td>
-        <td><%= match.opponent %></td>
-        <td><%= match.winner %></td>
-        <td><%= match.score %></td>
-        <td><%= match.description %></td>
-        <td><%= link_to 'Show', match %></td>
-        <td><%= link_to 'Edit', edit_match_path(match) %></td>
-        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Match', new_match_path %>
+<h1>Matchups</h1>
+</br>
+<div class="row">
+  <div class="col-xs-12">
+    <%= link_to 'Add Match', new_match_path, class: '' %>
+  </div>
+</div>
+</br>
+<div class="row">
+  <div class="col-xs-12">
+    <%- %w(a b c d e f).each do |grade| %>
+      <%= render_grade_link(grade) %>
+    <%- end %>
+  </div>
+</div>
+</br>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="matches-list">
+      <% @matches.each do |match| %>
+          <li class="match-list-item">
+            <a class='match-link' href='<%= match_path(match) %>'>
+              <p class='match-title'><%= render_match_title(match) %></p>
+              <p class='match-time'><%= format_index_date(match) %></p>
+            </a>
+          </li>
+        </a>
+      <% end %>
+    </ul>
+  </div>
+</div>
