@@ -1,13 +1,13 @@
-<h1>Grades</h1>
 </br>
-<%= render 'grade_links' %>
+<%= render 'controls' %>
 </br></br>
+<p class="mini-explanatory">*Teams without points are hidden by default.</p>
 <table class="table">
   <thead>
     <tr>
       <th>Rank</th>
       <th>Name</th>
-        <%- %w(a b c d e f).each do |grade| %>
+        <%- Grade.keys.each do |grade| %>
           <%= render_team_header(grade) %>
         <%- end %>
     </tr>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= rank+1 %></td>
         <td><%= link_to team.name, team_path(team)%></td>
-        <%- %w(a b c d e f).each do |grade| %>
+        <%- Grade.keys.each do |grade| %>
           <%= render_team_points(team, grade) %>
         <%- end %>
       </tr>

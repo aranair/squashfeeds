@@ -5,10 +5,10 @@
 </br></br>
 <table class="table">
   <tbody>
-    <%- %w(a b c d e f).each do |grade| %>
+    <%- Grade.all.each do |grade| %>
       <tr>
-        <td>Points <%= grade.upcase %></td>
-        <td><%= @team.send("points_#{grade}") %></td>
+        <td>Points <%= grade.name %></td>
+        <td><%= @team.send("points_#{grade.key}") %></td>
       </tr>
     <%- end %>
   </tbody>

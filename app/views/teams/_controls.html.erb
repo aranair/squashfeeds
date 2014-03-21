@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-12">
+    <%- if admin_signed_in? %>
+      <%= link_to 'Add Team', new_team_path %> |
+      <%= link_to 'Edit', edit_teams_list_path(@grade) if @grade.present?%> |
+    <%- end %>
+  </div>
+</div></br>
+<div class="row">
+  <div class="col-xs-12">
+    <%= render 'shared/grade_links' %>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<%- Grade.keys.each do |grade| %>
+  <%= render_grade_link(grade) %>
+  <%- if grade == 'f' %>
+    </br></br>
+  <%- end %>
+<%- end %>

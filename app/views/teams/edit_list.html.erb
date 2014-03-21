@@ -2,7 +2,7 @@
 </br>
 <div class="row">
   <div class="col-xs-12">
-    <%- %w(a b c d e f).each do |grade| %>
+    <%- Grade.keys.each do |grade| %>
       <%= render_grade_link(grade, 'edit') %>
     <%- end %>
   </div>
@@ -17,7 +17,7 @@
     <div class="form-group">
       <%= fields_for "teams[]", team do |f| %>  
         <div class="col-xs-4"><%= f.label team.name %></div>
-        <%- %w(a b c d e f).each do |grade| %>
+        <%- Grade.keys.each do |grade| %>
           <div class="col-xs-8 <%= 'hidden' if grade != @grade %>">
             <%= f.text_field eval(":points_#{grade}") %>
           </div>

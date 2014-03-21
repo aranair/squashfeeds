@@ -14,11 +14,11 @@
     <div class="col-xs-4"><%= f.label :name %></div>
     <div class="col-xs-8"><%= f.text_field :name %></div>
   </div>
-  <%- %w(a b c d e f).each do |grade| %>
+  <%- Grade.all.each do |grade| %>
     <div class="form-group">
-      <div class="col-xs-4"><%= "Points #{grade.upcase}" %></div>
+      <div class="col-xs-4"><%= "Points #{grade.name}" %></div>
       <div class="col-xs-8">
-        <%= f.text_field eval(":points_#{grade}") %>
+        <%= f.text_field eval(":points_#{grade.key}") %>
       </div>
     </div>
   <% end %>

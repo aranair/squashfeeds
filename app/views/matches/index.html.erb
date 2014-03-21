@@ -1,16 +1,12 @@
-<h1>Matchups</h1>
 </br>
 <div class="row">
   <div class="col-xs-12">
-    <%= link_to 'Add Match', new_match_path, class: '' %>
-  </div>
-</div>
-</br>
-<div class="row">
-  <div class="col-xs-12">
-    <%- %w(a b c d e f).each do |grade| %>
-      <%= render_grade_link(grade) %>
-    <%- end %>
+    <%= link_to new_match_path do %>
+      <%= button_tag type: 'button', class: 'btn btn-default' do %>
+        <span class="glyphicon glyphicon-plus"></span>
+      <% end %>
+    <% end %>
+    <%= render 'shared/grade_links' %>
   </div>
 </div>
 </br>
@@ -21,7 +17,13 @@
           <li class="match-list-item">
             <a class='match-link' href='<%= match_path(match) %>'>
               <p class='match-title'><%= render_match_title(match) %></p>
-              <p class='match-time'><%= format_index_date(match) %></p>
+              <p class='match-time'> 
+              <%= format_index_date(match) %> 
+              <%= "- at #{match.location}" if match.location.present? %> 
+              </p>
+            </a>
+            <a class='match-list-icon'>
+              <span class="glyphicon glyphicon-chevron-right"></span>
             </a>
           </li>
         </a>

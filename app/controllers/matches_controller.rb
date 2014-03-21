@@ -29,7 +29,7 @@ class MatchesController < ApplicationController
 
     respond_to do |format|
       if @match.save
-        format.html { redirect_to @match, notice: 'Match was successfully created.' }
+        format.html { redirect_to matches_path, notice: 'Match was successfully created.' }
         format.json { render action: 'show', status: :created, location: @match }
       else
         format.html { render action: 'new' }
@@ -70,6 +70,6 @@ class MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:grade, :date, :opponent, :winner, :score, :description, :result)
+      params.require(:match).permit(:grade, :date, :opponent, :winner, :score, :description, :result, :location)
     end
 end
