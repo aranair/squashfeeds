@@ -7,7 +7,7 @@ Ucsc::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'teams#all_grades'
+  root 'teams#index'
   get 'edit/teams/:grade' => 'teams#edit_list', as: 'edit_teams_list'
   post 'update/teams/:grade' => 'teams#update_list', as: 'update_teams_list'
 

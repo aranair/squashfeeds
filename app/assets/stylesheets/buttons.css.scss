@@ -1,0 +1,29 @@
+.btn-amethyst {
+  background-color: #9b59b6;
+  border-color: #9b59b6;
+  color: white;
+}
+.btn-amethyst:hover,
+.btn-amethyst:focus,
+.btn-amethyst:active,
+.btn-amethyst.active {
+  background-color: #8f4bab;
+  border-color: #804399;
+  color: white;
+}
+.btn-amethyst.disabled:hover,
+.btn-amethyst.disabled:focus,
+.btn-amethyst.disabled:active,
+.btn-amethyst.disabled.active,
+.btn-amethyst[disabled]:hover,
+.btn-amethyst[disabled]:focus,
+.btn-amethyst[disabled]:active,
+.btn-amethyst[disabled].active,
+fieldset[disabled] .btn-amethyst:hover,
+fieldset[disabled] .btn-amethyst:focus,
+fieldset[disabled] .btn-amethyst:active,
+fieldset[disabled] .btn-amethyst.active {
+  background-color: #9b59b6;
+  border-color: #9b59b6;
+  color:white;
+}

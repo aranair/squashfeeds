@@ -8,6 +8,6 @@ module GradeHelper
   end
 
   def active_btn_class(grade)
-    @grade == grade ? 'btn-primary' : 'btn-default'
+    @grade == grade ? 'btn-amethyst' : 'btn-default'
   end
 end
