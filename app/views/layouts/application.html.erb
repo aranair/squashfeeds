@@ -11,7 +11,7 @@
 <body>
 
     
-<%= render 'shared/top_panel'%>
+<%= render 'shared/top_panel', back_url: get_top_back_url, content_title: get_top_content_title %>
   <div class="container">
     <%= yield %>
   </div>
