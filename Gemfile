@@ -4,6 +4,7 @@ ruby '2.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
+gem 'browser'
 gem 'turbolinks'
 gem 'pg'
 gem "devise", "~> 3.1.0"
