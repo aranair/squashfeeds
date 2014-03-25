@@ -1,27 +1,31 @@
-<%= form_for @team, html: { class: 'form-horizontal' } do |f| %>
-  <% if @team.errors.any? %>
-    <div id="error_explanation">
-      <p><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</p>
-      <ul>
-      <% @team.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<div class="row">
+  <div class="col-xs-12">
+    <%= form_for @team, html: { class: 'form-horizontal' } do |f| %>
+      <% if @team.errors.any? %>
+        <div id="error_explanation">
+          <p><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</p>
+          <ul>
+          <% @team.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  </br>
-  <div class="form-group">
-    <div class="col-xs-4"><%= f.label :name %></div>
-    <div class="col-xs-8"><%= f.text_field :name %></div>
-  </div>
-  <%- Grade.all.each do |grade| %>
-    <div class="form-group">
-      <div class="col-xs-4"><%= "Points #{grade.name}" %></div>
-      <div class="col-xs-8">
-        <%= f.text_field eval(":points_#{grade.key}") %>
+      </br>
+      <div class="form-group">
+        <div class="col-xs-4"><%= f.label :team_name %></div>
+        <div class="col-xs-8"><%= f.text_field :name %></div>
       </div>
-    </div>
-  <% end %>
-  <%= submit_tag "Submit", class: 'btn btn-amethyst' %>
-  <%= link_to "Back", teams_path, class: 'btn btn-default' %>
-<% end %>
+      <%- Grade.all.each do |grade| %>
+        <div class="form-group">
+          <div class="col-xs-4"><%= "Points #{grade.name}" %></div>
+          <div class="col-xs-8">
+            <%= f.text_field eval(":points_#{grade.key}") %>
+          </div>
+        </div>
+      <% end %>
+      <%= submit_tag "Submit", class: 'btn btn-amethyst' %>
+      <%= link_to "Back", teams_path, class: 'btn btn-default' %>
+    <% end %>
+  </div>
+</div>
