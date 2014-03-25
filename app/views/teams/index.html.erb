@@ -16,7 +16,7 @@
     <% @teams.each_with_index do |team, rank| %>
       <tr>
         <td><%= rank+1 %></td>
-        <td><%= link_to team.name, team_path(team)%></td>
+        <td><%= link_to team.name, team_path(team, params.merge(grade: @grade))%></td>
         <%- Grade.keys.each do |grade| %>
           <%= render_team_points(team, grade) %>
         <%- end %>

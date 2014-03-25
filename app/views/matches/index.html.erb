@@ -16,7 +16,7 @@
     <ul class="matches-list">
       <% @matches.each do |match| %>
           <li class="match-list-item">
-            <a class='match-link' href='<%= match_path(match) %>'>
+            <a class='match-link' href='<%= match_path(match, params) %>'>
               <p class='match-title'><%= render_match_title(match) %></p>
               <p class='match-time'> 
               <%= format_index_date(match) %> 
