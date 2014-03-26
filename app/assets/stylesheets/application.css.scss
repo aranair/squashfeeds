@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require font-awesome
  *= require_tree .
  */
 
@@ -107,6 +108,12 @@ body { padding-top: 50px; }
   // &:hover { .glyphicon { color: #e7e7e7; } }
   &:after { clear: none; }
 
+  i.fa-angle-left { 
+    font-size: 35px; 
+    line-height: 50px;
+    margin-left: 15px;
+  }
+
   a { 
     position: absolute;
     color: rgb(21, 125, 251); 
@@ -115,7 +122,6 @@ body { padding-top: 50px; }
     display: block;
     width: 50px;
     height: 50px;
-    padding: 15px 15px;
   }
 }
 .brand {

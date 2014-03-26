@@ -15,6 +15,7 @@ gem 'hirb'
 gem 'compass-rails' # you need this or you get an err
 gem 'redcarpet'
 gem "pikaday-gem", "~> 1.1.0.0"
+gem 'font-awesome-sass'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'

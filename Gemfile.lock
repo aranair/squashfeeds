@@ -56,6 +56,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    font-awesome-sass (4.0.3.1)
+      sass (~> 3.2)
     fssm (0.2.10)
     hike (1.2.3)
     hirb (0.7.1)
@@ -151,6 +153,7 @@ DEPENDENCIES
   browser
   compass-rails
   devise (~> 3.1.0)
+  font-awesome-sass
   hirb
   jbuilder
   jquery-rails (~> 2.1)
