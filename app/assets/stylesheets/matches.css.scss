@@ -62,4 +62,5 @@ li.match-list-item {
     .match-title { text-decoration: underline; }
   }
   a.match-link:hover >.match-time { text-decoration: none; }
+  &:hover a.match-list-icon { color: #999999; }
 }
