@@ -1,7 +1,12 @@
-$bgDefault      : #9b59b6;
-$bgHighlight    : #8e44ad;
-$colHighlight     : #dee2e4;
-$colDefault   : #f7faff;
+// $bgDefault      : #9b59b6;
+// $bgHighlight    : #8e44ad;
+// $colHighlight     : #dee2e4;
+// $colDefault   : #f7faff;
+
+$bgDefault      : rgba(248, 248, 248, 0.9);;
+$bgHighlight    : rgba(248, 248, 248, 0.9);;
+$colHighlight     : rgb(21, 125, 251);
+$colDefault   : rgb(21, 125, 251);
 
 .navbar-default {
 	background-color: $bgDefault;

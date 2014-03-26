@@ -10,9 +10,14 @@
 </head>
 <body>
 
-<%= render 'shared/top_panel' %>
-  <div class="container">
-    <%= yield %>
+  <%= render 'shared/top_panel' %>
+  <div class="scrollMask"></div>
+  <div class="scrollWrap">
+    <div class="scroll">
+        <div class="content">
+          <%= yield %>
+        </div>
+    </div>
   </div>
 
 </body>
