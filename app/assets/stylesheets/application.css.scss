@@ -38,7 +38,7 @@ body { padding-top: 50px; }
     height: 100%;
   }
   .navbar { 
-    position: absolute;
+    position: fixed;
     top: 0px;
     opacity: 0.95;
     z-index: 10;
@@ -64,7 +64,7 @@ body { padding-top: 50px; }
     padding-right: 25px;
     height: 100%;
     background-color: rgb(255, 255, 255);
-    overflow: auto;
+    overflow: scroll;
     -webkit-overflow-scrolling: touch;
     z-index: 1;
     opacity: 1;
