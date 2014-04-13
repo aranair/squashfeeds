@@ -6,6 +6,7 @@ gem 'rails', '4.0.3'
 
 gem 'browser'
 gem 'turbolinks'
+gem 'turbolinks_transitions'
 gem 'pg'
 gem "devise", "~> 3.1.0"
 gem 'jquery-rails', '~> 2.1'
