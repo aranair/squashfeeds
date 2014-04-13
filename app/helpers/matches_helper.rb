@@ -14,7 +14,7 @@ module MatchesHelper
         when 2..7
           "#{diff} days ago"
         else
-          date.strftime("#{Time.new.day.ordinalize} %b %Y")
+          date.strftime("#{date.day.ordinalize} %b %Y")
         end
     (diff <= 0) ? "Playing #{s}" : "Played #{s}"
   end
@@ -35,7 +35,7 @@ module MatchesHelper
       Against #{match.opponent.capitalize}"
     else
       "#{match.grade.upcase}-grade.  \n
-      #{format_score(match.score)} #{result} Against #{match.opponent.capitalize}"
+      #{format_score(match.score)} #{result} Against #{match.opponent.split.map(&:capitalize).join(' ')}"
     end
   end
 end
