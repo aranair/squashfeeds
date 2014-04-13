@@ -16,7 +16,7 @@
   </div>
   <div class="form-group">
     <div class="col-xs-4"><%= f.label :date %></div>
-    <div class="col-xs-8"><%= f.date_field :date, value: Date.today.to_s(:db) %></div>
+    <div class="col-xs-8"><%= f.date_field :date, default_value: Date.today.to_s(:db) %></div>
   </div>
   <div class="form-group">
     <div class="col-xs-4"><%= f.label :opponent %></div>

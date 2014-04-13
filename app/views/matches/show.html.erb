@@ -13,7 +13,10 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <p class='match-time'><%= format_index_date(@match) %></p>
+      <p class='match-time'>
+        <%= format_index_date(@match) %>
+        <%= "- at #{@match.location}" if @match.location.present? %>
+      </p>
     </div>
   </div>
   <div class="row">

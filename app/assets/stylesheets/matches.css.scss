@@ -11,7 +11,10 @@
     line-height:27px;
     color:#333;
   }
-  .match-time { font-size: 16px; color: #777; }
+  .match-time { 
+    font-size: 16px; 
+    color: #428bca; 
+  }
   .user-actions { 
     a { color: #777; }
   }
@@ -57,10 +60,11 @@ li.match-list-item {
     width: 95%;
   }   
   a.match-link:hover {
-    background:rgba(255, 255, 255, 0.80);
     text-decoration: none;
     .match-title { text-decoration: underline; }
   }
   a.match-link:hover >.match-time { text-decoration: none; }
-  &:hover a.match-list-icon { color: #999999; }
+  &:hover {
+    a.match-list-icon { color: #999999; }
+  }
 }

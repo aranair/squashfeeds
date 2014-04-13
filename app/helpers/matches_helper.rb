@@ -31,9 +31,10 @@ module MatchesHelper
     result = match.result
     score = match.score
     if result == 'Unplayed'
-      "#{match.grade.upcase}-grade. Against #{match.opponent.capitalize}"
+      "#{match.grade.upcase}-grade. \n 
+      Against #{match.opponent.capitalize}"
     else
-      "#{match.grade.upcase}-grade. 
+      "#{match.grade.upcase}-grade.  \n
       #{format_score(match.score)} #{result} Against #{match.opponent.capitalize}"
     end
   end
