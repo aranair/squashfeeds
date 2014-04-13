@@ -4,4 +4,6 @@
     </br></br>
   <%- end %>
 <%- end %>
-<%= link_to 'Clear', params.clear, class: 'btn btn-default' unless local_assigns.has_key?(:skip_clear) %>
+<%- if !local_assigns.has_key?(:skip_clear) && @grade.present? -%>
+  <%= link_to 'Clear', params.clear, class: 'btn btn-default' %>
+<%- end %>
