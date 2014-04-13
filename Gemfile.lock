@@ -1,9 +1,9 @@
 GIT
-  remote: git@github.com:aranair/turbolinks_transitions.git
-  revision: 026d866921183ba1e73ef1ece8a13029a19fd295
+  remote: git@github.com:aranair/turbolinks_animations.git
+  revision: 5a541f04915bfa3cc7af3b51bef2676653990251
+  branch: master
   specs:
-    turbolinks_transitions (0.0.5)
-      coffee-rails
+    turbolinks_animations (0.0.5)
 
 GEM
   remote: http://rubygems.org/
@@ -173,5 +173,5 @@ DEPENDENCIES
   sdoc
   therubyracer
   turbolinks
-  turbolinks_transitions!
+  turbolinks_animations!
   uglifier

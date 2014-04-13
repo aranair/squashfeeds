@@ -6,7 +6,7 @@ gem 'rails', '4.0.3'
 
 gem 'browser'
 gem 'turbolinks'
-gem 'turbolinks_animations', git: "git@github.com:aranair/turbolinks_animations.git"
+gem 'turbolinks_animations', git: "git@github.com:aranair/turbolinks_animations.git", branch: 'master'
 gem 'pg'
 gem "devise", "~> 3.1.0"
 gem 'jquery-rails', '~> 2.1'
