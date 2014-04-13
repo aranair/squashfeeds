@@ -14,7 +14,7 @@ module MatchesHelper
         when 2..7
           "#{diff} days ago"
         else
-          date.strftime("#{date.day.ordinalize} %b %Y")
+          date.strftime("#{date.day.ordinalize} %b (%a)")
         end
     (diff <= 0) ? "Playing #{s}" : "Played #{s}"
   end
