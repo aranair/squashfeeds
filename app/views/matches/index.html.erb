@@ -1,6 +1,6 @@
 </br>
 </br>
-<div class="row">
+<div class="row js-turbolink-content" data-animation="fade">
   <div class="col-xs-12">
     <%= link_to new_match_path do %>
       <%= button_tag type: 'button', class: 'btn btn-default' do %>
@@ -11,7 +11,7 @@
   </div>
 </div>
 </br>
-<div class="row">
+<div class="row js-turbolink-content" data-animation="slide-left">
   <div class="col-xs-12">
     <ul class="matches-list">
       <% @matches.each do |match| %>
