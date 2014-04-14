@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/aranair/turbolinks_animations.git
-  revision: 05fdec9831f9b5448983eaae7296597acc978212
+  revision: df53f2e2c26532d9451bb59c30d2433e2c696b3f
   branch: master
   specs:
     turbolinks_animations (0.0.5)
