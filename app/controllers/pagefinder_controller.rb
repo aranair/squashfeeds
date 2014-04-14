@@ -1,4 +1,4 @@
 class PagefinderController < ApplicationController
-  def show
+  def chat
   end
 end
