@@ -35,7 +35,10 @@
   </br>
   <div class="row">
     <div class="col-xs-12 col-md-6">
-      <%= render 'shared/disqus', disqus_identifier: "matches##{@match.id}" %>
+      <%= render 'shared/disqus', 
+        disqus_identifier: "matches##{@match.id}",
+        disqus_title: render_match_title(@match).gsub("\n", "")
+      %>
     </div>
   </div>
 </div>

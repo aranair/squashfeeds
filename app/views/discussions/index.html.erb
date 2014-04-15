@@ -1,1 +1,12 @@
-<%= render 'shared/disqus', disqus_identifier: 'root' %>
+<div class="row">
+  <div class="col-xs-12 col-md-12" style="text-align:center">
+    </br>
+    <p class="muted"> Moar discussion when </br> you click on a match! </p>
+  </div>
+  <div class="col-xs-12 col-md-12">
+    <%= render 'shared/disqus', 
+      disqus_identifier: 'root',
+      disqus_title: 'UCSC Squash'
+    %>
+  </div>
+</div>
