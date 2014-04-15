@@ -10,7 +10,7 @@ Ucsc::Application.routes.draw do
   root 'matches#index'
   get 'edit/teams/:grade' => 'teams#edit_list', as: 'edit_teams_list'
   post 'update/teams/:grade' => 'teams#update_list', as: 'update_teams_list'
-  # get 'chat' => 'pagefinder#chat'
+  get 'discussions' => 'discussions#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
