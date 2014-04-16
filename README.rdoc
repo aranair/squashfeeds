@@ -1,5 +1,11 @@
-== README
+== UCSC (United Condo Squash Club) Squash Feeds
 
 App for UCSC (United Condo Squash Club) to keep track of scores for the annual NSL.
 
-Future Developments include scoreboards for our ladder.
+=== Future Developments:
+- Ladder Scoreboard
+- Blog Updates
+- Curated Squash News
+- Court Booking Schedules
+- Tournament Schedules
+
