@@ -16,6 +16,16 @@ module MatchesHelper
         else
           date.strftime("#{date.day.ordinalize} %b (%a)")
         end
+    if match.result == 'Victory' || match.result == 'Loss'
+      "Played #{s}"
+    else
+      # Unplayed
+      if diff <= 0
+        "Playing #{s}"
+      else
+        "Should have played #{s}. Update pls."
+      end
+    end
     (diff <= 0) ? "Playing #{s}" : "Played #{s}"
   end
 
